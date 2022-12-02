@@ -18,12 +18,12 @@ for line in open("inputs.txt").readlines():
         # 2 is a win
 
         i = (3 + me - them + 1) % 3
-        print(x := [0, 3, 6][i], y := me + 1, z := x + y)
+        print(x := i * 3, y := me + 1, z := x + y)
         return z
 
     def solve_2(me, them) -> int:
         i = (them + me - 1) % 3
-        print(x := i + 1, y := [0, 3, 6][me], z := x + y)
+        print(x := i + 1, y := me * 3, z := x + y)
         return z
 
     a, b = line.strip().split(" ")
