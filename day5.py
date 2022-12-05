@@ -25,4 +25,15 @@ def solve_1():
         crates[target] = crates[target] + moved[::-1]
     print("".join(map(lambda x: x[-1], crates)))
 
+def solve_1():
+    crates, moves = process_input()
+    for move in moves:
+        count, source, target = map(int, move.split(' ')[1::2])
+        source -= 1
+        target -= 1
+        moved = crates[source][-count:]
+        crates[source] = crates[source][:-count]
+        crates[target] = crates[target] + moved
+    print("".join(map(lambda x: x[-1], crates)))
+
 solve_1()
